@@ -1,0 +1,10 @@
+Configs: {
+	AbsoluteZinemaConfig: {
+		DisplayName: Absolute Zinema Config
+
+		MinScale: {
+			Label: Min Scale
+			Tooltip: ""
+		}
+	}
+}

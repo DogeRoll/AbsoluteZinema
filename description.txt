@@ -1,0 +1,6 @@
+AbsoluteZinema mod allows game to render more tiles when zoom out. This mod could be useful for those who wanna see more blocks (and have powerful pc).
+For now you should use other mods to alter the scale.
+
+You can change rendering area by changing MinScale parameter in mod preferences.
+
+Source code of that mod is available on GitHub: https://github.com/DogeRoll/AbsoluteZinema
