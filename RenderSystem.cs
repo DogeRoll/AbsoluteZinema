@@ -117,8 +117,8 @@ namespace AbsoluteZinema
                 ReleaseTargets();
                 offScreenRange = 192 
 
-                + _renderTargetMaxSize = maxScreenW * 2 + 400 * Main.maxScreenW / 1920;
-		        + offScreenRange = 192 + width/2;
+                + _renderTargetMaxSize = maxScreenW * 3 + 400 * Main.maxScreenW / 1920;
+		        + offScreenRange = 192 + EvalOffset;
 
                 if (width + offScreenRange * 2 > _renderTargetMaxSize)
 			        offScreenRange = (_renderTargetMaxSize - width) / 2;
