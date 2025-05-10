@@ -1,10 +1,11 @@
-﻿
+﻿using System;
 using Microsoft.Xna.Framework;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using System.Reflection;
 using Terraria;
 using Terraria.ModLoader;
+using log4net.Repository.Hierarchy;
 
 namespace AbsoluteZinema
 {
@@ -23,15 +24,22 @@ namespace AbsoluteZinema
         }
 
         public static void ReloadRenderTargets()
-        {
+        { 
             /* SetResolution() call InitTargets() function, that sets off screen drawing area and renderers */
             Main.QueueMainThreadAction(() =>
             {
-                var sw = Main.screenWidth;
-                var sh = Main.screenHeight;
-                Main.SetResolution(Main.screenWidth + 1, Main.screenHeight + 1);
-                Main.SetResolution(Main.screenWidth - 1, Main.screenHeight - 1);
-                Main.SetResolution(sw, sh);
+                try
+                {
+                    var sw = Main.screenWidth;
+                    var sh = Main.screenHeight;
+                    Main.SetResolution(Main.screenWidth + 1, Main.screenHeight + 1);
+                    Main.SetResolution(Main.screenWidth - 1, Main.screenHeight - 1);
+                    Main.SetResolution(sw, sh);
+                }
+                catch (NullReferenceException ex)
+                {
+                    Console.WriteLine($"{ex.ToString()}: This should only happen on server initialization.");
+                }
             });
         }
 
@@ -49,6 +57,7 @@ namespace AbsoluteZinema
                 i => i.MatchLdloc(out _),
                 i => i.MatchLdfld(typeof(Point).GetField("X")),
                 i => i.MatchStloc(out idx));
+            
 
             c.Remove();
             c.Remove();
