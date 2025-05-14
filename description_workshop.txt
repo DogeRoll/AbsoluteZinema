@@ -2,12 +2,11 @@
 [h3] This mod could be useful for those who wanna see more blocks (and have powerful pc). [/h3]
 
 [h3]How to use:[/h3]
-For now you should use other mods to alter the scale.
-I'd recommend BetterZoom mod for zooming out camera.
+Set required zoom and rendering options in config and change scale in general options.
 
 [h3]Mod Config:[/h3]
-You can change rendering area by changing MinScale parameter in mod preferences.
-The MinScale can be set in range [0.4, 1.0], but it's not recommented to make it too low
-cause it may lead to performance issues.
+You can change rendering area and scale by changing scaling parameter in mod preferences.
+The Min. Scale and Min. Zoom options can be set in range [40, 100], but it's not recommented to make Min. Scale too low cause it may lead to performance issues.
+By default both parameters are equal, but you can set different values by changing "Same as Zoom" option in config.
 
 Source code of that mod is available on GitHub: https://github.com/DogeRoll/AbsoluteZinema

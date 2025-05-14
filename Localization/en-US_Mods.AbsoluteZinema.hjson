@@ -1,10 +1,21 @@
 Configs: {
 	AbsoluteZinemaConfig: {
 		DisplayName: Absolute Zinema Config
+		ZoomHeader: Zoom options
 
 		MinScale: {
-			Label: Min Scale
-			Tooltip: ""
+			Label: Min. Scale (%)
+			Tooltip: The lower the value, the larger the rendering area.
+		}
+
+		MinZoom: {
+			Tooltip: The lower the value, the larger the area you can see. (This option won't work if BetterZoom is loaded).
+			Label: Min. Zoom (%)
+		}
+
+		SameAsZoom: {
+			Label: Same As Zoom
+			Tooltip: Use same min. scale and min. zoom values. (This option won't work if BetterZoom is loaded).
 		}
 	}
 }

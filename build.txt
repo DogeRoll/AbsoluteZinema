@@ -1,4 +1,5 @@
 displayName = Absolute Zinema
 author = DogeRoll
-version = 0.1.1
+version = 0.4
 homepage = https://github.com/DogeRoll/AbsoluteZinema
+weakReferences = BetterZoom

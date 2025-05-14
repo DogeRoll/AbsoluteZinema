@@ -5,7 +5,6 @@ using MonoMod.Cil;
 using System.Reflection;
 using Terraria;
 using Terraria.ModLoader;
-using log4net.Repository.Hierarchy;
 
 namespace AbsoluteZinema
 {
@@ -112,7 +111,7 @@ namespace AbsoluteZinema
 
         }
 
-        private static int EvalOffset(int dim) => (int)((float)dim * (1.0f / _config.MinScale - 1.0f) / 2);
+        private static int EvalOffset(int dim) => (int)((float)dim * (1.0f / ((float)_config.MinScale / 100f) - 1.0f) / 2);
 
         private Point On_Main_GetScreenOverdrawOffset(On_Main.orig_GetScreenOverdrawOffset orig)
         {
