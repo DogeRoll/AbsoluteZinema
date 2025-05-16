@@ -119,10 +119,10 @@ namespace AbsoluteZinema
             {
                 float num = 0.02f;
                 if (PlayerInput.Triggers.Current.ViewZoomIn)
-                    Main.GameZoomTarget = Utils.Clamp(Main.GameZoomTarget + num, _config.MinZoom, 2f); // MARKED
+                    Main.GameZoomTarget = Utils.Clamp(Main.GameZoomTarget + num, MinZoom, 2f); // MARKED
 
                 if (PlayerInput.Triggers.Current.ViewZoomOut)
-                    Main.GameZoomTarget = Utils.Clamp(Main.GameZoomTarget - num, _config.MinZoom, 2f); // MARKED
+                    Main.GameZoomTarget = Utils.Clamp(Main.GameZoomTarget - num, MinZoom, 2f); // MARKED
             }
         }
     }
