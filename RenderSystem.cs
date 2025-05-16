@@ -5,6 +5,7 @@ using MonoMod.Cil;
 using System.Reflection;
 using Terraria;
 using Terraria.ModLoader;
+using AbsoluteZinema.GraphicalFixes;
 
 namespace AbsoluteZinema
 {
@@ -15,11 +16,12 @@ namespace AbsoluteZinema
 
         public override void Load()
         {
+            /* NOTE: In future this IL's should be applied as graphical fix */
             On_Main.GetScreenOverdrawOffset += On_Main_GetScreenOverdrawOffset;
             IL_Main.InitTargets_int_int += IL_Main_InitTargets;
             IL_Main.DrawBlack += IL_Main_DrawBlack;
+            GraphicalFixManager.ApplyAllFixes();
             ReloadRenderTargets();
-            
         }
 
         public static void ReloadRenderTargets()
