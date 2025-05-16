@@ -7,10 +7,17 @@ using System.Threading.Tasks;
 
 namespace AbsoluteZinema.GraphicalFixes
 {
+    /// <summary>
+    /// Loader class for all graphical fixes<br/>
+    /// Just declare a class inherited from IGraphicalFix interface and loader will automatically find and apply them<br/>
+    /// </summary>
     internal static class GraphicalFixManager
     {
         private static List<IGraphicalFix> _fixes = new();
 
+        /// <summary>
+        /// Find and apply all fixes, inherited from IGraphicalFix interface<br/>
+        /// </summary>
         public static void ApplyAllFixes()
         {
             var fixClasses = Assembly.GetExecutingAssembly()

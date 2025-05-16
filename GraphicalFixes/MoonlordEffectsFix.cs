@@ -15,6 +15,10 @@ namespace AbsoluteZinema.GraphicalFixes
 
         private void IL_MoonlordDeathDrama_DrawWhite(ILContext il)
         {
+            /*
+                - spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle(-2, -2, Main.screenWidth + 4, Main.screenHeight + 4), new Rectangle(0, 0, 1, 1), color);
+                + spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle(-Main.offScreenRange, -Main.offScreenRange, Main.screenWidth + Main.offScreenRange * 2, Main.screenHeight + Main.offScreenRange * 2), new Rectangle(0, 0, 1, 1), color);
+            */
             ILCursor c = new ILCursor(il);
 
             c.GotoNext(MoveType.Before,
