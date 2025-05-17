@@ -29,16 +29,20 @@ namespace AbsoluteZinema
             /* SetResolution() call InitTargets() function, that sets off screen drawing area and renderers */
             Main.QueueMainThreadAction(() =>
             {
+                var initTargets = typeof(Main).GetMethod("InitTargets", BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[] { }, null);
+                var isBusy = typeof(Main).GetField("_isResizingAndRemakingTargets", BindingFlags.Static | BindingFlags.NonPublic);
                 try
                 {
-                    var sw = Main.screenWidth;
-                    var sh = Main.screenHeight;
-                    Main.SetResolution(Main.screenWidth + 1, Main.screenHeight + 1);
-                    Main.SetResolution(Main.screenWidth - 1, Main.screenHeight - 1);
-                    Main.SetResolution(sw, sh);
+                    if (!(bool)isBusy.GetValue(null))
+                    {
+                        isBusy.SetValue(null, true);
+                        initTargets.Invoke(Main.instance, null);
+                        isBusy.SetValue(null, false);
+                    }
                 }
                 catch (NullReferenceException ex)
                 {
+                    isBusy.SetValue(null, false);
                     Console.WriteLine($"{ex.ToString()}: This should only happen on server initialization.");
                 }
             });
