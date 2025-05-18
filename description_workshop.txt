@@ -1,6 +1,9 @@
 ﻿[h3] AbsoluteZinema mod allows game to render more tiles when zoom out. [/h3]
 [h3] This mod could be useful for those who wanna see more blocks (and have powerful pc). [/h3]
 
+[h1] WARNING: Mod is not compatible with Better Zoom and may not be compatible with other graphical mods[/h1]
+If u want it to be compatible with other mods ask in the "Compatibility Requests" thread.
+
 [h3]How to use:[/h3]
 Set required zoom and rendering options in config and change scale in general options.
 

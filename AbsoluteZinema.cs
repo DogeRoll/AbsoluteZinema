@@ -12,7 +12,8 @@ namespace AbsoluteZinema
 
         public override void Load()
         {
-            
+            if (IsBetterZoomLoaded)
+                throw new System.Exception("[AbsoluteZinema]: Mod is incompatible with better zoom now");
         }
     }
 }

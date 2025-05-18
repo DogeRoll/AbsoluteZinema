@@ -12,17 +12,13 @@ namespace AbsoluteZinema
     internal class ZoomSystem : ModSystem
     {
         private static readonly AbsoluteZinemaConfig _config = ModContent.GetInstance<AbsoluteZinemaConfig>();
-        private static readonly AbsoluteZinema _mod = ModContent.GetInstance<AbsoluteZinema>();
 
         public override void Load()
         {
-            if (!_mod.IsBetterZoomLoaded)
-            {
-                On_Main.UpdateViewZoomKeys += On_Main_UpdateViewZoomKeys;
-                IL_IngameOptions.Draw += IL_IngameOptions_Draw;
-                IL_UILinksInitializer.HandleOptionsSpecials += IL_UILinkInitializer_HandleOptionSpecials;
-                IL_Main.DoDraw += IL_Main_DoDraw;
-            }
+            On_Main.UpdateViewZoomKeys += On_Main_UpdateViewZoomKeys;
+            IL_IngameOptions.Draw += IL_IngameOptions_Draw;
+            IL_UILinksInitializer.HandleOptionsSpecials += IL_UILinkInitializer_HandleOptionSpecials;
+            IL_Main.DoDraw += IL_Main_DoDraw;
         }
 
         public static void ReloadZoom()
