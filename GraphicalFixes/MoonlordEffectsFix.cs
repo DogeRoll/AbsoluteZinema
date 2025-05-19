@@ -8,6 +8,7 @@ namespace AbsoluteZinema.GraphicalFixes
 {
     internal class MoonlordEffectsFix : IGraphicalFix
     {
+        public bool ShouldBeApplied() { return true; }
         public void Apply()
         {
             IL_MoonlordDeathDrama.DrawWhite += IL_MoonlordDeathDrama_DrawWhite;

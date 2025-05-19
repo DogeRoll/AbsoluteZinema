@@ -27,8 +27,11 @@ namespace AbsoluteZinema.GraphicalFixes
             foreach (var cls in fixClasses)
             {
                 var instance = (IGraphicalFix)Activator.CreateInstance(cls);
-                instance.Apply();
-                _fixes.Add(instance);
+                if (instance.ShouldBeApplied())
+                {
+                    instance.Apply();
+                    _fixes.Add(instance);
+                }
             }
         }
     }

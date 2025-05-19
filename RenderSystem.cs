@@ -9,7 +9,7 @@ using AbsoluteZinema.GraphicalFixes;
 
 namespace AbsoluteZinema
 {
-    
+
     internal class RenderSystem : ModSystem
     {
         private static readonly AbsoluteZinemaConfig _config = ModContent.GetInstance<AbsoluteZinemaConfig>();
@@ -25,7 +25,7 @@ namespace AbsoluteZinema
         }
 
         public static void ReloadRenderTargets()
-        { 
+        {
             /* SetResolution() call InitTargets() function, that sets off screen drawing area and renderers */
             Main.QueueMainThreadAction(() =>
             {
@@ -62,7 +62,7 @@ namespace AbsoluteZinema
                 i => i.MatchLdloc(out _),
                 i => i.MatchLdfld(typeof(Point).GetField("X")),
                 i => i.MatchStloc(out idx));
-            
+
 
             c.Remove();
             c.Remove();
@@ -141,10 +141,10 @@ namespace AbsoluteZinema
 
             ILCursor c = new ILCursor(il);
 
-            c.GotoNext(MoveType.After, 
+            c.GotoNext(MoveType.After,
                 i => i.MatchStsfld<Main>("offScreenRange"));
-            
-            
+
+
             MethodInfo evalOffset = typeof(RenderSystem).GetMethod("EvalOffset", BindingFlags.NonPublic | BindingFlags.Static);
             // maxScreenW * 2
             c.Emit(OpCodes.Ldsfld, typeof(Main).GetField("maxScreenW"));
@@ -164,7 +164,7 @@ namespace AbsoluteZinema
             c.Emit(OpCodes.Ldarg_1);
             c.Emit(OpCodes.Call, evalOffset);
             c.Emit(OpCodes.Add);
-            c.Emit(OpCodes.Stsfld, typeof(Main).GetField("offScreenRange")); 
+            c.Emit(OpCodes.Stsfld, typeof(Main).GetField("offScreenRange"));
 
         }
 
