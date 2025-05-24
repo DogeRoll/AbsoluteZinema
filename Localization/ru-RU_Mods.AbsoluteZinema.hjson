@@ -1,21 +1,56 @@
 Configs: {
 	AbsoluteZinemaConfig: {
-		DisplayName: Absolute Zinema config
-		ZoomHeader: Параметры масштаба
+		DisplayName: Основная конфигурация
 
 		MinScale: {
-			Label: Мин. область рендеринга (%)
-			Tooltip: При уменьшении параметра увеличивается область рендеринга.
+			Label: Область отрисовки тайлов (%)
+			Tooltip: Чем меньше значение, тем больше область отрисовки тайлов.
 		}
 
 		MinZoom: {
-			Tooltip: При уменьшении параметра увеличивается макс. видимая область. (Не будет использоваться если загружен мод BetterZoom).
-			Label: Мин. приближение камеры (%)
+			Tooltip: Чем меньше значение, тем больше отдаление камеры.
+			Label: Минимальное приближение камеры (%)
 		}
 
 		SameAsZoom: {
-			Label: Равный мин. приближению
-			Tooltip: Использовать одинаковые мин. область рендерина и мин. масштаб. (Не будет использоваться если загружен мод BetterZoom).
+			Label: Равный отдалению камеры
+			Tooltip: Использовать одинаковые отдаление камеры и область рендеринга.
 		}
+	}
+
+	CompatibilityOptionsValue: {
+		Tooltip: Режимы отрисовки модовых тайлов
+		Off.Label: Выкл.
+		On.Label: Вкл.
+		Modified.Label: Измененная
+	}
+
+	AbsoluteZinemaCompatibilityConfig: {
+		WallPostDrawingMode: {
+			Tooltip: Отрисовка модовых стен, использующих метод PostDraw
+			Label: Отрисовка модовых стен (До)
+		}
+
+		WallPreDrawingMode: {
+			Tooltip: Отрисовка модовых стен, использующих метод PreDraw
+			Label: Отрисовка модовых стен (После)
+		}
+
+		TilePostDrawingMode: {
+			Tooltip: Отрисовка модовых тайлов, использующих метод PostDraw
+			Label: Отрисовка модовых тайлов (До)
+		}
+
+		TilePreDrawingMode: {
+			Tooltip: Отрисовка модовых тайлов, использующих метод PreDraw
+			Label: Отрисовка модовых тайлов (После)
+		}
+
+		TileSpecialDrawingMode: {
+			Tooltip: Отрисовка специальных модовых тайлов
+			Label: Отрисовка специальных тайлов
+		}
+
+		DisplayName: Конфигурация совместимости
 	}
 }

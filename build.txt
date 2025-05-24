@@ -1,5 +1,5 @@
 displayName = Absolute Zinema
 author = DogeRoll
-version = 0.7
+version = 0.9
 homepage = https://github.com/DogeRoll/AbsoluteZinema
 side = Client

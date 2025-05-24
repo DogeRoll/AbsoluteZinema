@@ -14,6 +14,11 @@ namespace AbsoluteZinema.GraphicalFixes
             IL_MoonlordDeathDrama.DrawWhite += IL_MoonlordDeathDrama_DrawWhite;
         }
 
+        public void Remove()
+        {
+            IL_MoonlordDeathDrama.DrawWhite -= IL_MoonlordDeathDrama_DrawWhite;
+        }
+
         private void IL_MoonlordDeathDrama_DrawWhite(ILContext il)
         {
             /*

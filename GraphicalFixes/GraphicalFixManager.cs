@@ -16,6 +16,13 @@ namespace AbsoluteZinema.GraphicalFixes
         private static List<IGraphicalFix> _fixes = new();
 
         /// <summary>
+        /// Checks if requested fix is applied
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns>'true' if fix is applied otherwise 'false'</returns>
+        public static bool IsFixApplied(Type type) => _fixes.Any(obj => obj.GetType() == typeof(Type));
+
+        /// <summary>
         /// Find and apply all fixes, inherited from IGraphicalFix interface<br/>
         /// </summary>
         public static void ApplyAllFixes()
@@ -33,6 +40,15 @@ namespace AbsoluteZinema.GraphicalFixes
                     _fixes.Add(instance);
                 }
             }
+        }
+
+        public static void Clear()
+        {
+            foreach  (var fix in _fixes)
+            {
+                fix.Remove();
+            }
+            _fixes.Clear();
         }
     }
 }

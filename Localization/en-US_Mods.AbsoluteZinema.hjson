@@ -1,7 +1,6 @@
 Configs: {
 	AbsoluteZinemaConfig: {
-		DisplayName: Absolute Zinema Config
-		ZoomHeader: Zoom options
+		DisplayName: Main config
 
 		MinScale: {
 			Label: Min. Scale (%)
@@ -9,13 +8,49 @@ Configs: {
 		}
 
 		MinZoom: {
-			Tooltip: The lower the value, the larger the area you can see. (This option won't work if BetterZoom is loaded).
+			Tooltip: The lower the value, the larger the area you can see.
 			Label: Min. Zoom (%)
 		}
 
 		SameAsZoom: {
 			Label: Same As Zoom
-			Tooltip: Use same min. scale and min. zoom values. (This option won't work if BetterZoom is loaded).
+			Tooltip: Use same min. scale and min. zoom values.
 		}
+	}
+
+	CompatibilityOptionsValue: {
+		Tooltip: Modes of drawing mod tiles and walls
+		Off.Label: Off
+		On.Label: On
+		Modified.Label: Modified
+	}
+
+	AbsoluteZinemaCompatibilityConfig: {
+		WallPostDrawingMode: {
+			Tooltip: Mode of drawing walls that use PostDraw method
+			Label: Walls post drawing mode
+		}
+
+		WallPreDrawingMode: {
+			Tooltip: Mode of drawing walls that use PreDraw method
+			Label: Walls pre drawing mode
+		}
+
+		TilePostDrawingMode: {
+			Tooltip: Mode of drawing tiles that use PostDraw method
+			Label: Tiles post drawing mode
+		}
+
+		TilePreDrawingMode: {
+			Tooltip: Mode of drawing tiles that use PreDraw method
+			Label: Tiles pre drawing mode
+		}
+
+		TileSpecialDrawingMode: {
+			Tooltip: Mode of drawing tiles that use SpecialDraw method
+			Label: Specials draw mode
+		}
+
+		DisplayName: Compatibility config
 	}
 }

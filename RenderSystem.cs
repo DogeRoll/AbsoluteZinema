@@ -6,6 +6,7 @@ using System.Reflection;
 using Terraria;
 using Terraria.ModLoader;
 using AbsoluteZinema.GraphicalFixes;
+using Terraria.ID;
 
 namespace AbsoluteZinema
 {
@@ -14,6 +15,10 @@ namespace AbsoluteZinema
     {
         private static readonly AbsoluteZinemaConfig _config = ModContent.GetInstance<AbsoluteZinemaConfig>();
 
+        private static readonly int _offset = 192;
+
+        public static int Offset => _offset;
+
         public override void Load()
         {
             /* NOTE: In future this IL's should be applied as graphical fix */
@@ -21,6 +26,15 @@ namespace AbsoluteZinema
             IL_Main.InitTargets_int_int += IL_Main_InitTargets;
             IL_Main.DrawBlack += IL_Main_DrawBlack;
             GraphicalFixManager.ApplyAllFixes();
+            ReloadRenderTargets();
+        }
+
+        public override void Unload()
+        {
+            On_Main.GetScreenOverdrawOffset -= On_Main_GetScreenOverdrawOffset;
+            IL_Main.InitTargets_int_int -= IL_Main_InitTargets;
+            IL_Main.DrawBlack -= IL_Main_DrawBlack;
+            GraphicalFixManager.Clear();
             ReloadRenderTargets();
         }
 
@@ -160,7 +174,7 @@ namespace AbsoluteZinema
             // _renderTargetMaxSize = result
             c.Emit(OpCodes.Stsfld, typeof(Main).GetField("_renderTargetMaxSize", BindingFlags.NonPublic | BindingFlags.Static));
             // offScreenRange = 192 + evalOffset
-            c.Emit(OpCodes.Ldc_I4, 192);
+            c.Emit(OpCodes.Ldc_I4, _offset);
             c.Emit(OpCodes.Ldarg_1);
             c.Emit(OpCodes.Call, evalOffset);
             c.Emit(OpCodes.Add);

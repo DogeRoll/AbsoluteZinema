@@ -13,3 +13,5 @@ The Min. Scale and Min. Zoom options can be set in range [40, 100], but it's not
 By default both parameters are equal, but you can set different values by changing "Same as Zoom" option in config.
 
 Source code of that mod is available on GitHub: https://github.com/DogeRoll/AbsoluteZinema
+
+Updates review in Telegram (russian mostly): https://t.me/+WmJlNLY9I6dmMWNi
