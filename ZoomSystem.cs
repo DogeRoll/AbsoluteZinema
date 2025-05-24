@@ -44,7 +44,18 @@ namespace AbsoluteZinema
             });
         }
 
-        public static float MinZoom => (float)_config.MinZoom / 100f; // Exception here
+        public static float MinZoom {
+            get {
+                try
+                {
+                    return (float)_config.MinZoom / 100f; // Exception here
+                }
+                catch (NullReferenceException ex)
+                {
+                    return 1f;
+                }
+            }
+        }
 
         private void IL_Main_DoDraw(ILContext il)
         {
