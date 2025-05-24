@@ -8,9 +8,17 @@ If u want it to be compatible with other mods ask in the "Compatibility Requests
 Set required zoom and rendering options in config and change scale in general options.
 
 [h3]Mod Config:[/h3]
+[h4]Zoom and rendering settings:[/h4]
+This settings are available in main configuration.
+
 You can change rendering area and scale by changing scaling parameter in mod preferences.
 The Min. Scale and Min. Zoom options can be set in range [40, 100], but it's not recommented to make Min. Scale too low cause it may lead to performance issues.
 By default both parameters are equal, but you can set different values by changing "Same as Zoom" option in config.
+
+[h4]Compatibility settings:[/h4]
+This settings are available in compatibility config. Use them only if some tiles from other mods are drawn incorrectly.
+There are five sliders: 3 for tiles and 2 for walls. By default all set to "Modified", that makes rendering compatible with most content mods.
+However if you have some troubles you should set sliders to "off". It will disable some textures, but all tiles will be correctly possitioned.
 
 Source code of that mod is available on GitHub: https://github.com/DogeRoll/AbsoluteZinema
 
